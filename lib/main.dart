@@ -19,21 +19,37 @@ class MyApp extends StatelessWidget {
             style: TextStyle(fontSize: 28),
           ),
         ),
-        body: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(labelText: "이메일"),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(32),
+                  child: Image.network(
+                    "https://i.ibb.co/nngK6j3/startup.png",
+                    width: 81,
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(labelText: "이메일"),
+                ),
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(labelText: "비말번호"),
+                ),
+                Container(
+                  width: double.infinity,
+                  margin: EdgeInsets.only(top: 24),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        print("log in button tapped");
+                      },
+                      child: Text("로그인")),
+                ),
+              ],
             ),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(labelText: "비말번호"),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  print("log in button tapped");
-                },
-                child: Text("로그인")),
-          ],
+          ),
         ),
       ),
     );
